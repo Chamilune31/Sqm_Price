@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Estimate Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <body>
+    <main class="card">
+      <h1>Estimate</h1>
+
+      <div class="result-grid">
+        <div class="row">
+          <span class="label">Location</span>
+          <span class="value">{{ city }}, {{ country }}</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Area</span>
+          <span class="value">{{ sqm }} m²</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Price per m² (USD)</span>
+          <span class="value">${{ "%.2f"|format(price_per_sqm) }}</span>
+        </div>
+
+        <div class="row total">
+          <span class="label">Estimated total (USD)</span>
+          <span class="value">${{ "%.2f"|format(total_price) }}</span>
+        </div>
+      </div>
+
+      <a class="link" href="/">← New estimate</a>
+    </main>
+  </body>
+  </html>
+<html><body>See chat</body></html>

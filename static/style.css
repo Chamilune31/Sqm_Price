@@ -1,0 +1,135 @@
+:root {
+  --bg: #0b0f19;
+  --card: #121a2a;
+  --text: #e8eefc;
+  --muted: #a9b5d1;
+  --border: rgba(232, 238, 252, 0.12);
+  --danger: rgba(255, 80, 80, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #18213a, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(720px, 100%);
+  background: color-mix(in srgb, var(--card) 92%, black);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+h1 {
+  margin: 0 0 8px 0;
+  font-size: 26px;
+}
+
+.subtitle {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  outline: none;
+}
+
+input:focus {
+  border-color: rgba(232, 238, 252, 0.28);
+}
+
+button {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(255,255,255,.10);
+}
+
+.alert {
+  border: 1px solid var(--border);
+  background: var(--danger);
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin: 14px 0;
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.footnote {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.result-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,.03);
+}
+
+.row.total {
+  background: rgba(255,255,255,.07);
+}
+
+.label { color: var(--muted); }
+.value { font-weight: 650; }
+
+.link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.link:hover { opacity: 1; }
+body { font-family: sans-serif; }

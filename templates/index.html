@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home Price Estimator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <body>
+    <main class="card">
+      <h1>Home / Apartment Price Estimator</h1>
+      <p class="subtitle">
+        Estimate the price of your future house or flat!
+      </p>
+
+      {% if errors %}
+        <div class="alert">
+          <ul>
+            {% for e in errors %}
+              <li>{{ e }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <form action="/estimate" method="post" class="form">
+        <label>
+          Square meters
+          <input
+            type="text"
+            name="sqm"
+            inputmode="numeric"
+            placeholder="e.g. 60"
+            value="{{ (form.sqm if form else '') }}"
+            required
+          />
+        </label>
+
+        <label>
+          City 
+          <input
+            type="text"
+            name="city"
+            placeholder="e.g. Paris"
+            value="{{ (form.city if form else '') }}"
+            required
+          />
+        </label>
+
+        <label>
+          Country
+          <input
+            type="text"
+            name="country"
+            placeholder="e.g. France"
+            value="{{ (form.country if form else '') }}"
+            required
+          />
+        </label>
+
+        <button type="submit">Estimate price</button>
+      </form>
+
+      <p class="footnote">
+      </p>
+    </main>
+  </body>
+  </html>
+<html><body>See chat</body></html>
