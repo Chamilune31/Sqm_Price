@@ -1,0 +1,9 @@
+services:
+  sqm1:
+    build: .
+    ports:
+      - "8080:5000"
+  sqm2:
+    build: .
+    ports:
+      - "8081:5000"

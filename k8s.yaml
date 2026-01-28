@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqm-price
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sqm-price
+  template:
+    metadata:
+      labels:
+        app: sqm-price
+    spec:
+      containers:
+        - name: sqm-price
+          image: sqm-price:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sqm-price
+spec:
+  selector:
+    app: sqm-price
+  ports:
+    - port: 80
+      targetPort: 5000
+  type: NodePort
